@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Agenda</string>
+    <string name="empty_field">Empty Field</string>
+    <string name="name">Name</string>
+    <string name="phone_options">Phone Options</string>
+    <string name="telephone">Telephone</string>
+    <string name="man">Man</string>
+    <string name="woman">Woman</string>
+    <string name="other">Other</string>
+    <string name="save">Save</string>
+</resources>

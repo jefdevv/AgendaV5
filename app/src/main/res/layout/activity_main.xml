@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".ui.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/topTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/toptable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtName"
+        style="@style/TextInputLayoutMaterial3"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:hint="@string/name"
+        android:textColorHint="@color/hintColor"
+        app:hintTextColor="@color/hintColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/topTable"
+        app:layout_constraintTop_toTopOf="@id/topTable">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtNameMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:inputType="textPersonName"
+            android:maxLength="20"
+            android:textColor="@color/hintColor"
+            android:textStyle="bold">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dropTel"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/phone_options"
+        android:textColorHint="@color/hintColor"
+        app:hintTextColor="@color/hintColor"
+        app:layout_constraintBottom_toTopOf="@id/edtTel"
+        app:layout_constraintStart_toStartOf="@id/edtName"
+        app:layout_constraintTop_toBottomOf="@id/edtName">
+
+        <AutoCompleteTextView
+
+            android:id="@+id/auto_complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:inputType="none"
+            android:textColor="@color/hintColor"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtTel"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/telephone"
+        android:textColorHint="@color/hintColor"
+        app:hintTextColor="@color/hintColor"
+        app:layout_constraintStart_toStartOf="@id/edtName"
+        app:layout_constraintTop_toBottomOf="@id/dropTel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTelMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColor="@color/hintColor"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/edtTel"
+        app:layout_constraintStart_toStartOf="@id/edtTel"
+        app:layout_constraintTop_toBottomOf="@id/edtTel">
+
+        <RadioButton
+            android:id="@+id/rdbMan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/man"
+            android:textColor="@color/hintColor" />
+
+        <RadioButton
+            android:id="@+id/rdbWoman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/woman"
+            android:textColor="@color/hintColor" />
+
+        <RadioButton
+            android:id="@+id/rdbOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/other"
+            android:textColor="@color/hintColor" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="@string/save"
+        android:textColor="@color/hintColor"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/edtTel"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+    <ImageView
+        android:id="@+id/bottonTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/bottontable"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/topTable"
+        app:layout_constraintStart_toStartOf="@id/topTable"
+        app:layout_constraintTop_toBottomOf="@id/topTable" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="387dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="50dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottonTable"
+        app:layout_constraintEnd_toEndOf="@id/bottonTable"
+        app:layout_constraintStart_toStartOf="@id/bottonTable"
+        app:layout_constraintTop_toTopOf="@id/bottonTable" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
